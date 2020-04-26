@@ -44,6 +44,14 @@ In the above examples:
 - `${var##*/}` will outputs all characters after the last slash `/`, so only the filename without the path will remains;
 - `${f%.*}` will outputs all characters before the last dot, so the path and the filename will be kept but the file extension will be removed. Then the command substitution `$(basename "/path/name")` will outputs only the name without the path.
 
+compress file, folder into little bundled size
+```bash
+zip -r -s 500m output.zip target_folder/
+```
+breakdown:
+- `-r` full form --recursive-paths. It will travel the directory structure recursively;
+- `-s` represents --split-size. So, we're specifying that break the whole folder and compress into little 500MB sized zip files.
+
 **Resources:**
 - [ASK UBUNTU](https://askubuntu.com/questions/1172233/batch-compress-videos-with-ffmpeg)
 - [StackOverFlow](https://stackoverflow.com/questions/5784661/how-do-you-convert-an-entire-directory-with-ffmpeg)
